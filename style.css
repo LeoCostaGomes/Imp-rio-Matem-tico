@@ -1,0 +1,107 @@
+
+body {
+    background-color: #000;
+    color: #00ff66;
+    font-family: 'Courier New', monospace;
+    margin: 0;
+    padding: 0;
+}
+
+
+header {
+    text-align: center;
+    padding: 50px 20px 20px;
+    background: linear-gradient(180deg, #001900, #000);
+    box-shadow: 0 0 20px #00ff66;
+}
+
+h1 {
+    font-size: 3em;
+    color: #00ff66;
+    text-shadow: 0 0 15px #00ff66;
+}
+
+h2 {
+    color: #00ff99;
+    text-shadow: 0 0 10px #00ff66;
+}
+
+h3 {
+    border-bottom: 1px solid #00ff66;
+    padding-bottom: 10px;
+    text-shadow: 0 0 5px #00ff33;
+}
+
+
+section {
+    max-width: 900px;
+    margin: 30px auto;
+    padding: 20px;
+    background: rgba(0, 30, 0, 0.7);
+    border: 1px solid #00ff66;
+    border-radius: 10px;
+    box-shadow: 0 0 20px #00ff33;
+}
+
+p {
+    line-height: 1.6em;
+    font-size: 1.1em;
+}
+
+
+.tipos {
+    background: rgba(0, 40, 0, 0.8);
+    border: 2px solid #00ff99;
+    box-shadow: 0 0 25px #00ff66;
+}
+
+
+.texto-cesar {
+    background: none;
+    border: none;
+    box-shadow: none;
+    padding: 10px 0;
+}
+
+
+.exemplo-cesar {
+    margin-top: 20px;
+    background: rgba(0, 60, 0, 0.8);
+    border: 1px dashed #00ff66;
+    border-radius: 8px;
+    padding: 15px;
+    text-align: center;
+    box-shadow: 0 0 15px #00ff33;
+    transition: 0.3s;
+    width: 60%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.exemplo-cesar:hover {
+    background: rgba(0, 80, 0, 0.9);
+    transform: scale(1.03);
+    box-shadow: 0 0 25px #00ff99;
+}
+
+.exemplo-cesar p {
+    margin: 5px 0;
+    font-size: 1.1em;
+}
+
+.seta {
+    color: #00ff99;
+    font-weight: bold;
+    font-size: 1.3em;
+    margin: 0 5px;
+}
+
+footer {
+    text-align: center;
+    padding: 30px;
+    color: #00ff66;
+    border-top: 1px solid #00ff66;
+    margin-top: 50px;
+    background: #001900;
+}
+0
