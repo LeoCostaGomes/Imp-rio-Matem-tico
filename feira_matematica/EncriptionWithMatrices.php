@@ -6,64 +6,44 @@ class EncriptionWithMatrices extends EncriptionWithKey implements Encription
     public function encript(string|int $message): string
     {
         $n = 2;
-        $size = $n * $n;
-        $lettersByNumbers = $this->transformToArray($message);
-        $this->key = $this->transformToArray($this->key);
-        while (count($lettersByNumbers) % $size !== 0) {
-            $lettersByNumbers[] = 0;
-        }
-        
-        
-        return "";
+        $A1 = $this->transformToArray($message);
+        $A2 = $this->transformToArray($this->key);
+
+        $A1 = $this->toMatrix($A1, $n);
+        $A2 = $this->toMatrix($A2, $n);
+
+        return $this->multiplyMatrices($A1, $A2);
     }
-    /*public function encript(string|int $message): string
-    {
-        $n = 2;
-        $size = $n * $n;
-        $lettersByNumbers = $this->transformToArray($message);
-        $this->key = $this->transformToArray($this->key);
-
-        while (count($lettersByNumbers) % $size !== 0) {
-            $lettersByNumbers[] = 0;
-        }
-
-        $matrices = [];
-        for ($i = 0; $i < count($lettersByNumbers); $i += $size) {
-            $block = array_slice($lettersByNumbers, $i, $size);
-            $matrix = [];
-            for ($row = 0; $row < $n; $row++) {
-                $start = $row * $n;
-                $matrix[] = array_slice($block, $start, $n);
-            }
-            $matrices[] = $matrix;
-        }
-
-        $encryptedText = '';
-        foreach ($matrices as $matrix) {
-            $product = $this->multiplyMatrices($this->key, $matrix);
-            foreach ($product as $row) {
-                foreach ($row as $value) {
-                    $encryptedText .= chr(($value % 26) + ord('a') - 1);
-                }
-            }
-        }
-
-        return $encryptedText;
-    }
-    */
 
     private function transformToArray(string|int $message): array
     {
         $lettersByNumbers = [];
-        foreach (str_split(strtolower($message)) as $char) {
-            if ($char >= 'a' && $char <= 'z') {
-                $num = ord($char) - ord('a') + 1;
-                $lettersByNumbers[] = $num;
-            } else if (is_int($char)) {
-                $lettersByNumbers[] = $char;
+        $message = strtolower((string)$message);
+        foreach (str_split($message) as $char) {
+        if ($char >= 'a' && $char <= 'z') {
+            $num = ord($char) - ord('a') + 1;
+        } elseif (ctype_digit($char)) {
+            $num = (int)$char;
+        } else {
+            continue;
+        }
+
+        $lettersByNumbers[] = $num;
+    }
+        return $lettersByNumbers;
+    }
+
+    private function toMatrix(array $flatArray, int $n): array
+    {
+        $matrix = [];
+        $index = 0;
+        for ($i = 0; $i < $n; $i++) {
+            for ($j = 0; $j < $n; $j++) {
+                $matrix[$i][$j] = $flatArray[$index] ?? 0;
+                $index++;
             }
         }
-        return $lettersByNumbers;
+        return $matrix;
     }
 
     private function multiplyMatrices(array $A1, array $A2): string
@@ -87,6 +67,14 @@ class EncriptionWithMatrices extends EncriptionWithKey implements Encription
                 $result[$i][$j] = $sum;
             }
         }
-        return "";
+        $message = '';
+        foreach ($result as $row) {
+            foreach ($row as $num) {
+                $letterIndex = (($num - 1) % 26) + 1;
+                $message .= chr($letterIndex + ord('a') - 1);
+            }
+        }
+
+        return $message;
     }
 }

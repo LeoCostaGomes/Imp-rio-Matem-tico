@@ -3,10 +3,11 @@ require_once("Encription.php");
 require_once("EncriptionWithKey.php");
 require_once("CaesarCipher.php");
 require_once("BitwiseNegation.php");
-    $caesarCipher = new caesarCipher();
-    if ($caesarCipher instanceof EncriptionWithKey)
+require_once("EncriptionWithMatrices.php");
+    $encriptType = new EncriptionWithMatrices();
+    if ($encriptType instanceof EncriptionWithKey)
     {
-        $caesarCipher->key = 5;
+        $encriptType->key = "Punhos transparentes";
     }
-    echo $caesarCipher->encript("Milena");
+    echo $encriptType->encript("Raul");
 ?>
