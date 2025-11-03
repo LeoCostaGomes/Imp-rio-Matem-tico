@@ -5,9 +5,17 @@ class EncriptionWithMatrices extends EncriptionWithKey implements Encription
 {
     public function encript(string|int $message): string
     {
-        $n = 2;
         $A1 = $this->transformToArray($message);
         $A2 = $this->transformToArray($this->key);
+
+        $len1 = count($A1);
+        $len2 = count($A2);
+
+        $maxLen = max($len1, $len2);
+        $n = (int)ceil(sqrt($maxLen)); 
+        if ($n < 2) {
+            $n = 2;
+        }
 
         $A1 = $this->toMatrix($A1, $n);
         $A2 = $this->toMatrix($A2, $n);
@@ -71,7 +79,9 @@ class EncriptionWithMatrices extends EncriptionWithKey implements Encription
         foreach ($result as $row) {
             foreach ($row as $num) {
                 $letterIndex = (($num - 1) % 26) + 1;
-                $message .= chr($letterIndex + ord('a') - 1);
+                $char = chr($letterIndex + ord('a') - 1) == '`' ? "" : chr($letterIndex + ord('a') - 1);
+                $message .= $char;
+                
             }
         }
 
