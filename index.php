@@ -3,47 +3,53 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Feira de Matemática</title>
+    <title>Feira de Matemática - Criptografia</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <header>
+
+    <header class="cabecalho">
         <h1>Feira de Matemática</h1>
         <h2>Criptografia usando Matrizes</h2>
     </header>
 
-    <section class="introducao">
-        <p>Criptografia é a prática de proteger informações por meio de técnicas que transformam dados em um formato ilegível para pessoas não autorizadas, garantindo confidencialidade, integridade e, em alguns casos, autenticidade. Ela usa algoritmos matemáticos e chaves para codificar (criptografar) e decodificar (descriptografar) dados.</p>
-    </section>
+    <main>
+        <section class="introducao">
+            <h3>O que é Criptografia?</h3>
+            <p>A criptografia é a técnica de proteger informações, transformando mensagens legíveis em códigos indecifráveis. Isso garante segurança, autenticidade e integridade dos dados.</p>
+        </section>
 
-    <section class="origem">
-        <h3>A origem da criptografia</h3>
-        <p>A criptografia existe desde os primeiros registros de escrita. O termo vem do grego kryptós (oculto) e gráphein (escrever)...</p>
-    </section>
+        <section class="origem">
+            <h3>Origem da Criptografia</h3>
+            <p>A criptografia existe desde as primeiras civilizações. A palavra vem do grego <em>kryptós</em> (oculto) + <em>gráphein</em> (escrever). Era usada para enviar mensagens secretas em tempos de guerra.</p>
+        </section>
 
-    <section class="moderna">
-        <h3>A era digital e a criptografia moderna</h3>
-        <p>Com a internet, a criptografia se tornou parte do dia a dia...</p>
-    </section>
+        <section class="moderna">
+            <h3>Criptografia na Era Digital</h3>
+            <p>Hoje, a criptografia está em tudo: redes sociais, bancos, compras online e até em conversas no WhatsApp. Ela é essencial para proteger dados na internet.</p>
+        </section>
 
-    <section class="tipos">
-        <h3>Tipos de Criptografia</h3>
+        <section class="tipos">
+            <h3>Exemplo de Criptografia: Cifra de César</h3>
 
-        <div class="texto-cezar">
-            <h4>Cifra de César</h4>
-            <p><strong>A Cifra de César</strong> é uma das formas mais antigas e simples de criptografia. Criada por Júlio César, ela servia para enviar mensagens secretas aos seus generais, substituindo letras do texto por outras, seguindo um padrão fixo de deslocamento no alfabeto.</p>
-            <p>O método funciona deslocando cada letra um certo número de posições. Por exemplo, se deslocarmos 3 letras, A se torna D, B se torna E, e assim por diante.</p>
-        </div>
+            <div class="texto-cezar">
+                <h4>Cifra de César</h4>
+                <p>A <strong>Cifra de César</strong> substitui cada letra do texto por outra, seguindo um deslocamento fixo no alfabeto. Por exemplo, com deslocamento de 3, A vira D, B vira E, C vira F e assim por diante.</p>
+            </div>
 
-        <div class="card">
-            <h5>Exemplo de Criptografia</h5>
-            <p><strong>Mensagem:</strong> Milena</p>
-            <p><strong>Deslocamento:</strong> 5 posições</p>
-            <p><strong>Resultado:</strong> Rnqjsf</p>
-        </div>
-    </section>
+            <div class="card">
+                <h5>Exemplo de Criptografia</h5>
+                <p><strong>Mensagem:</strong> Milena</p>
+                <p><strong>Deslocamento:</strong> 5 posições</p>
+                <p><strong>Resultado:</strong> <span class="resultado">Rnqjsf</span></p>
+            </div>
+        </section>
+    </main>
 
-    <footer>
-       
+    <footer class="rodape">
+        <p>Trabalho apresentado por: (Nome da Equipe)</p>
+        <p>Feira de Matemática • 2025</p>
+    </footer>
+
 </body>
 </html>
