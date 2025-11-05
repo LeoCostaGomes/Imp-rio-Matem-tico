@@ -1,6 +1,6 @@
 <?php
     abstract class EncriptionWithKey
     {
-        public mixed $key;
+        public int | string $key;
     }
 ?>
