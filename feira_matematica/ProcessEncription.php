@@ -18,6 +18,7 @@
     }
 
     if ($encriptions[$encriptType] instanceof Encription){
-        $result = $encriptions[$encriptType].encript();
+        $result = $encriptions[$encriptType]->encript();
     }
+
 ?>
