@@ -13,34 +13,74 @@
     </header>
 
     <section class="introducao">
+        <h3 class="titulo"> Introdução </h3>
         <p>Criptografia é a prática de proteger informações por meio de técnicas que transformam dados em um formato ilegível para pessoas não autorizadas, garantindo confidencialidade, integridade e, em alguns casos, autenticidade. Ela usa algoritmos matemáticos e chaves para codificar (criptografar) e decodificar (descriptografar) dados.</p>
     </section>
 
     <section class="origem">
-        <h3>A origem da criptografia</h3>
+        <h3 class="titulo">A origem da criptografia</h3>
         <p>A criptografia existe desde os primeiros registros de escrita. O termo vem do grego kryptós (oculto) e gráphein (escrever)...</p>
     </section>
 
     <section class="moderna">
-        <h3>A era digital e a criptografia moderna</h3>
+        <h3 class="titulo">A era digital e a criptografia moderna</h3>
         <p>Com a internet, a criptografia se tornou parte do dia a dia...</p>
     </section>
 
     <section class="tipos">
-        <h3>Tipos de Criptografia</h3>
+        <h3 class="titulo">Tipos de Criptografia</h3>
 
         <div class="texto-cezar">
-            <h4>Cifra de César</h4>
-            <p><strong>A Cifra de César</strong> é uma das formas mais antigas e simples de criptografia. Criada por Júlio César, ela servia para enviar mensagens secretas aos seus generais, substituindo letras do texto por outras, seguindo um padrão fixo de deslocamento no alfabeto.</p>
+            <h3>Cifra de César</h3>
+            <p><strong>A cifra de César</strong> é uma das formas mais antigas e simples de criptografia. Criada por Júlio César, ela servia para enviar mensagens secretas aos seus generais, substituindo letras do texto por outras, seguindo um padrão fixo de deslocamento no alfabeto.</p>
             <p>O método funciona deslocando cada letra um certo número de posições. Por exemplo, se deslocarmos 3 letras, A se torna D, B se torna E, e assim por diante.</p>
         </div>
 
         <div class="card">
-            <h5>Exemplo de Criptografia</h5>
+            <h3>Exemplo</h3>
             <p><strong>Mensagem:</strong> Milena</p>
             <p><strong>Deslocamento:</strong> 5 posições</p>
             <p><strong>Resultado:</strong> Rnqjsf</p>
         </div>
+
+        <div class="texto-matriz">
+            <h3>Cifra por negação bitwise</h3>
+            <p><strong>A criptografia por negação bitwise</strong>, ou inversão de bits, é um conceito
+             fundamental e simples que faz parte das operações criptográficas, mas não é um método de criptografia seguro por si só.
+              O processo é bem direto: ele inverte cada bit individual de um dado, transformando todos os 0s em 1s e todosos 1s em 0s.</p>
+        </div>
+
+        <div class="card">
+            <h3>Exemplo</h3>
+            <p><strong>Mensagem:</strong> Ola</p>
+            <p><strong>transforma em codigo binario: </strong> 01001111(o) 01101100(l) 01100001(a) </p>
+            <p><strong>Inverte os bits do codigo binario: </strong> 10110000 10010011 10011110</p>
+        </div>
+
+        <div class="texto-matriz">
+            <h3>Cifra com matrizes</h3>
+            <p><strong>A cifra com matrizes</strong> é uma forma de transformar uma mensagem em código para que apenas quem souber o método 
+            consiga entender o que foi escrito. Um dos jeitos de fazer isso é usando matrizes, que são tabelas formadas por números organizados
+             em linhas e colunas.</p>
+
+             <h3>Transformando em números:</h3>
+             <p>Primeiro, cada letra do alfabeto é trocada por um número. Por exemplo: A = 1, B = 2, C = 3, ..., Z = 26. 
+            Assim, a palavra “OLA” vira os números 15, 12 e 1</p>
+
+            <h3>Montar uma matriz com esses números:</h3>
+            <p>Exemplo: [15 12] [ 1 0]</p>
+        </div>
+
+        <div class="card">
+            <h3>Exemplo</h3>
+            <p><strong>Mensagem:</strong> “OI” → O = 15, I = 9 </p>
+            <p><strong>matriz da mensagem:</strong> [15] [ 9 ] </p>
+            <p><strong>Matriz chave:</strong> [2 1] [1 1] </p>
+            <p><strong> Multiplicando:</strong>  [2 1] x [15] = [39] / [1 1]x[ 9]  [24]</p>
+            <p><strong>Mensagem criptografada:</strong> [39, 24].</p>
+            <p>Para descobrir “OI” novamente, é preciso usar a matriz inversa da chave</p>
+        </div>
+
     </section>
 
     <footer>
