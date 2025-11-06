@@ -19,12 +19,19 @@
 
     <section class="origem">
         <h3 class="titulo">A origem da criptografia</h3>
-        <p>A criptografia existe desde os primeiros registros de escrita. O termo vem do grego kryptós (oculto) e gráphein (escrever)...</p>
+        <p>A criptografia existe desde os primeiros registros de escrita.O termo vem do grego kryptós (oculto) e gráphein 
+            (escrever). Desde cedo, civilizações criaram formas de esconder mensagens importantes, como segredos militares
+             e políticos.No Egito Antigo, cerca de 1900 a.C., já havia hieróglifos alterados para ocultar significados.
+             Na Grécia, os espartanos usavam a scytale, uma tira de couro enrolada em um bastão que só podia ser lida com 
+             outro igual.No Império Romano, Júlio César criou a Cifra de César, trocando letras por outras deslocadas no alfabeto.</p>
     </section>
 
     <section class="moderna">
         <h3 class="titulo">A era digital e a criptografia moderna</h3>
-        <p>Com a internet, a criptografia se tornou parte do dia a dia...</p>
+        <p>Com a internet, a criptografia se tornou parte do dia a dia.
+             Nos anos 1970 surgiu o sistema de chaves pública e privada, que permite enviar mensagens seguras sem trocar senhas.
+             Hoje ela protege comunicações, compras, transações e sites com o cadeado ao lado do endereço. Os métodos atuais usam 
+             cálculos complexos com números primos e curvas elípticas, mas a segurança também depende de sistemas bem feitos e atualizados.</p>
     </section>
 
     <section class="tipos">
