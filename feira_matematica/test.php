@@ -14,7 +14,7 @@
     require_once("CaesarCipher.php");
     require_once("BitwiseNegation.php");
     require_once("EncriptionWithMatrices.php");
-    include("GenerateForm.php");
+    require_once("GenerateForm.php");
 
     echo GetForm();
     ?>

@@ -11,14 +11,13 @@
 
     global $encriptions; 
 
-    if ($encriptions[$encriptType] instanceof EncriptionWithKey)
+    if ($encriptions[$encriptionType] instanceof EncriptionWithKey)
     {
         $key = $_POST['key'];
-        $encriptions[$encriptType] = $key;
+        $encriptions[$encriptionType]->key = $key;
     }
 
-    if ($encriptions[$encriptType] instanceof Encription){
-        $result = $encriptions[$encriptType]->encript();
+    if ($encriptions[$encriptionType] instanceof Encription){
+        echo $result = $encriptions[$encriptionType]->encript($message);
     }
-
 ?>

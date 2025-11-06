@@ -56,7 +56,6 @@ function GetForm(): string
         })
         .then(response => response.text())
         .then(data => {
-            // Exibe a resposta do ProcessEncription.php
             document.getElementById("result").innerHTML = "Resultado da Criptografia: <strong>" + data + "</strong>";
         })
         .catch(error => {
