@@ -1,71 +1,13 @@
-
-body {
-    background-color: #000;
-    color: #00ff66;
-    font-family: 'Courier New', monospace;
-    margin: 0;
-    padding: 0;
-    overflow-x: hidden;
+/*variaveis*/
+:root { 
+    --piscano: flicker 3s infinite alternate;
 }
 
-
-body::before {
-    content: "";
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-image: repeating-linear-gradient(
-        to bottom,
-        rgba(0, 255, 102, 0.05) 0,
-        rgba(0, 255, 102, 0.05) 1px,
-        transparent 1px,
-        transparent 2px
-    );
-    animation: scanlines 10s linear infinite;
-    pointer-events: none;
-    z-index: 0;
-}
-
-@keyframes scanlines {
-    from { background-position: 0 0; }
-    to { background-position: 0 100%; }
-}
-
-
-header {
-    text-align: center;
-    padding: 60px 20px 30px;
-    background: linear-gradient(180deg, #002200, #000);
-    box-shadow: 0 0 25px #00ff66;
-    position: relative;
-    z-index: 1;
-}
-
-h1 {
-    font-size: 3em;
-    color: #00ff66;
-    text-shadow: 0 0 20px #00ff66, 0 0 40px #00ff33;
-    letter-spacing: 2px;
-    animation: flicker 2s infinite alternate;
-}
-
+/*animação*/
 @keyframes flicker {
     0%, 18%, 22%, 25%, 53%, 57%, 100% { opacity: 1; }
     20%, 24%, 55% { opacity: 0.6; }
 }
-
-h2, h3 {
-    color: #00ff99;
-    text-shadow: 0 0 12px #00ff66;
-}
-
-h3 {
-    border-bottom: 1px solid #00ff66;
-    padding-bottom: 8px;
-}
-
 
 section {
     max-width: 900px;
@@ -86,59 +28,25 @@ section:hover {
     box-shadow: 0 0 40px #00ff99;
 }
 
-p {
-    line-height: 1.6em;
-    font-size: 1.1em;
+/*estilos principais*/
+
+body {
+    background-color: #000;
+    color: #00ff66;
+    font-family: 'Courier New', monospace;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
 }
 
-
-.tipos {
-    background: rgba(0, 40, 0, 0.9);
-    border: 2px solid #00ff99;
-    box-shadow: 0 0 30px #00ff66;
-}
-
-
-.texto-cesar {
-    background: none;
-    border: none;
-    box-shadow: none;
-    padding: 10px 0;
-}
-
-
-.exemplo-cesar {
-    margin-top: 20px;
-    background: rgba(0, 60, 0, 0.9);
-    border: 1px dashed #00ff66;
-    border-radius: 8px;
-    padding: 20px;
+header {
     text-align: center;
-    box-shadow: 0 0 20px #00ff33;
-    transition: 0.3s ease;
-    width: 70%;
-    margin-left: auto;
-    margin-right: auto;
+    padding: 60px 20px 30px;
+    background: linear-gradient(180deg, #002200, #000);
+    box-shadow: 0 0 25px #00ff66;
+    position: relative;
+    z-index: 1;
 }
-
-.exemplo-cesar:hover {
-    background: rgba(0, 90, 0, 0.95);
-    transform: scale(1.05);
-    box-shadow: 0 0 35px #00ff99;
-}
-
-.exemplo-cesar p {
-    margin: 5px 0;
-    font-size: 1.1em;
-}
-
-.seta {
-    color: #00ff99;
-    font-weight: bold;
-    font-size: 1.3em;
-    margin: 0 5px;
-}
-
 
 footer {
     text-align: center;
@@ -150,16 +58,37 @@ footer {
     box-shadow: 0 -5px 20px #00ff33;
 }
 
+.card{
+    background-color: #08381b;
+    padding: 5px;
+    padding-left: 10px;
+    border-radius: 6px;
+}
 
-@media (max-width: 768px) {
-    h1 {
-        font-size: 2.2em;
-    }
-    section {
-        width: 90%;
-        padding: 15px;
-    }
-    .exemplo-cesar {
-        width: 90%;
-    }
+
+/*estilo-fontes*/
+h1 {
+    font-size: 3em;
+    color: #00ff66;
+    text-shadow: 0 0 20px #00ff66, 0 0 40px #00ff33;
+    letter-spacing: 2px;
+    animation: var(--piscano);
+}
+
+h2, h3 {
+    color: #00ff99;
+    text-shadow: 0 0 12px #00ff66;  
+    animation: var(--piscano);  
+}
+
+p {
+    line-height: 1.6em;
+    font-size: 1.1em;
+    animation: var(--piscano); 
+}
+
+
+.titulo {
+    border-bottom: 1px solid #00ff66;
+    padding-bottom: 8px;
 }
