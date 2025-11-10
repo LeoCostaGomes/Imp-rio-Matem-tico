@@ -56,7 +56,7 @@ function GetForm(): string
         })
         .then(response => response.text())
         .then(data => {
-            document.getElementById("result").innerHTML = "Resultado da Criptografia: <strong>" + data + "</strong>";
+            document.getElementById("result").innerHTML = "Resultado da Criptografia: <strong><p class=\"resultado-criptografia\">" + data + "</p></strong>";
         })
         .catch(error => {
             document.getElementById("result").innerHTML = "Ocorreu um erro: " + error;
