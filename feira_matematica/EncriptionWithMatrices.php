@@ -79,7 +79,7 @@ class EncriptionWithMatrices extends EncriptionWithKey implements Encription
         foreach ($result as $row) {
             foreach ($row as $num) {
                 $letterIndex = (($num - 1) % 26) + 1;
-                $char = chr($letterIndex + ord('a') - 1) == '`' ? "" : chr($letterIndex + ord('a') - 1);
+                $char = chr($letterIndex + ord('a') - 1) == '`' ? " " : chr($letterIndex + ord('a') - 1);
                 $message .= $char;
                 
             }
@@ -88,3 +88,4 @@ class EncriptionWithMatrices extends EncriptionWithKey implements Encription
         return $message;
     }
 }
+
