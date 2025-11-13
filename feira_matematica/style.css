@@ -62,6 +62,15 @@ footer {
     border-radius: 6px;
 }
 
+.matrix-inline {
+    display: inline-table;
+    font-family: 'Courier New', monospace;
+    white-space: pre;
+    color: #00ff66;
+    text-shadow: 0 0 12px #00ff66;
+    margin-left: 10px;
+    
+}
 
 h1 {
     font-size: 3em;
