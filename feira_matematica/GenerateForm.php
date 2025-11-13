@@ -76,7 +76,7 @@ function UpdateForm(string $encriptType): string
     }
 
     if ($encriptions[$encriptType] instanceof EncriptionWithKey) {
-        return '<label for="key">Chave da criptografia</label>
+        return '<label for="key">Chave da criptografia: </label>
             <input type="text" name="key" id="key">';
     }
     return '';
@@ -84,13 +84,8 @@ function UpdateForm(string $encriptType): string
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['functionName']) && $_POST['functionName'] === 'UpdateForm') {
     
-    // Pega o tipo de criptografia enviado pelo JavaScript
     $encriptType = $_POST['encriptType'] ?? '0'; 
-    
-    // Chama a função e ecoa o HTML resultante para o navegador
     echo UpdateForm($encriptType);
-    
-    // É CRUCIAL terminar o script aqui para que ele não tente retornar a página HTML completa
     exit; 
 }
 ?>
