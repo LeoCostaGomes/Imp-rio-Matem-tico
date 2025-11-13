@@ -24,13 +24,13 @@
 
     <section class="origem">
         <h3 class="titulo">A origem da criptografia</h3>
-        <p>A criptografia existe desde os primeiros registros de escrita.O termo vem do grego kryptós (oculto) e
-            gráphein
-            (escrever). Desde cedo, civilizações criaram formas de esconder mensagens importantes, como segredos
-            militares
-            e políticos.No Egito Antigo, cerca de 1900 a.C., já havia hieróglifos alterados para ocultar significados.
+        <p>A criptografia existe desde os primeiros registros de escrita. O termo vem do grego kryptós (oculto) e
+            gráphein (escrever). Desde cedo, civilizações criaram formas de esconder mensagens importantes, como
+            segredos
+            militares e políticos. No Egito Antigo, cerca de 1900 a.C., já havia hieróglifos alterados para ocultar
+            significados.
             Na Grécia, os espartanos usavam a scytale, uma tira de couro enrolada em um bastão que só podia ser lida com
-            outro igual.No Império Romano, Júlio César criou a Cifra de César, trocando letras por outras deslocadas no
+            outro igual. No Império Romano, Júlio César criou a Cifra de César, trocando letras por outras deslocadas no
             alfabeto.</p>
     </section>
 
@@ -40,9 +40,8 @@
             Nos anos 1970 surgiu o sistema de chaves pública e privada, que permite enviar mensagens seguras sem trocar
             senhas.
             Hoje ela protege comunicações, compras, transações e sites com o cadeado ao lado do endereço. Os métodos
-            atuais usam
-            cálculos complexos com números primos e curvas elípticas, mas a segurança também depende de sistemas bem
-            feitos e atualizados.</p>
+            atuais usam cálculos complexos com números primos e curvas elípticas, mas a segurança também depende de
+            sistemas bem feitos e atualizados.</p>
     </section>
 
     <section class="tipos">
@@ -65,54 +64,65 @@
         </div>
 
         <div class="texto-matriz">
-            <h3>Cifra por negação bitwise</h3>
-            <p><strong>A criptografia por negação bitwise</strong>, ou inversão de bits, é um conceito
+            <h3>Negação bit a bit</h3>
+            <p><strong>A negação bit a bit</strong>, ou inversão de bits, é um conceito
                 fundamental e simples que faz parte das operações criptográficas, mas não é um método de criptografia
                 seguro por si só.
                 O processo é bem direto: ele inverte cada bit individual de um dado, transformando todos os 0s em 1s e
-                todosos 1s em 0s.</p>
+                todos os 1s em 0s.</p>
         </div>
 
         <div class="card">
             <h3>Exemplo</h3>
             <p><strong>Mensagem:</strong> Ola</p>
-            <p><strong>transforma em codigo binario: </strong> 01001111(o) 01101100(l) 01100001(a) </p>
-            <p><strong>Inverte os bits do codigo binario: </strong> 10110000 10010011 10011110</p>
+            <p><strong>Transforma em código binário:</strong> 01001111 (O), 01101100 (L), 01100001 (A)</p>
+            <p><strong>Inverte os bits do código binário:</strong> 10110000 10010011 10011110</p>
         </div>
 
         <div class="texto-matriz">
             <h3>Criptografia com matrizes</h3>
-            <p><strong>A criptografia com matrizes</strong> é uma forma de transformar uma mensagem em código para que
-                apenas quem souber o método
-                consiga entender o que foi escrito. Um dos jeitos de fazer isso é usando matrizes, que são tabelas
-                formadas por números organizados
-                em linhas e colunas.</p>
+            <p><strong>A criptografia com matrizes</strong> é um método de codificação que utiliza operações matemáticas
+                com matrizes (estruturas formadas por números organizados em linhas e colunas) para transformar o
+                texto original em um texto cifrado. Esse tipo de técnica aproveita conceitos de álgebra linear para
+                embaralhar os dados e torná-los difíceis de decifrar sem a chave correta.</p>
 
-            <h3>Transformando em números:</h3>
+            <h3>Como funciona?</h3>
             <p>Primeiro, cada letra do alfabeto é trocada por um número. Por exemplo: A = 1, B = 2, C = 3, ..., Z = 26.
-                Assim, a palavra “OLA” vira os números 15, 12 e 1</p>
+                Assim, a palavra “OLA” vira os números 15, 12 e 1.</p>
 
-            <h3>Montar uma matriz com esses números:</h3>
-            <p>Exemplo: [15 12] [ 1 0]</p>
+            <p>Em seguida, montamos uma matriz com esses elementos. Por exemplo, a sequência 15, 12 e 1 se transformaria
+                em uma matriz tipo essa:
+                <span class="matrix-inline">[15 12]<br>[1 0]</span>
+            </p>
         </div>
 
         <div class="card">
             <h3>Exemplo</h3>
             <p><strong>Mensagem:</strong> “OI” → O = 15, I = 9 </p>
-            <p><strong>matriz da mensagem:</strong> [15] [ 9 ] </p>
-            <p><strong>Matriz chave:</strong> [2 1] [1 1] </p>
-            <p><strong> Multiplicando:</strong> [2 1] x [15] = [39] / [1 1]x[ 9] [24]</p>
-            <p><strong>Mensagem criptografada:</strong> [39, 24].</p>
-            <p>Para descobrir “OI” novamente, é preciso usar a matriz inversa da chave</p>
+
+            <p><strong>Matriz da mensagem:</strong>
+                <span class="matrix-inline">[15]<br>[9]</span>
+            </p>
+
+            <p><strong>Matriz chave:</strong>
+                <span class="matrix-inline">[2 1]<br>[1 1]</span>
+            </p>
+
+            <p><strong>Multiplicando:</strong>
+                <span class="matrix-inline">[2 1] × [15] = [39]<br>[1 1] × [9] = [24]</span>
+            </p>
+
+            <p><strong>Matriz resultante:</strong> [39, 24].</p>
+            <p><strong>Mensagem criptografada:</strong> MX</p>
+            <p>Para descobrir “OI” novamente, é preciso usar a matriz inversa da chave.</p>
         </div>
 
     </section>
 
     <section class="calculadora">
-        <h3>Teste os metodos de criptografia citados acima:</h3>
+        <h3>Teste os métodos de criptografia citados acima:</h3>
         <?php
         require_once("GenerateForm.php");
-
         echo GetForm();
         ?>
     </section>
@@ -120,6 +130,5 @@
     <footer>
 
 </body>
-
 
 </html>
