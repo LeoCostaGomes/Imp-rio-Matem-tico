@@ -12,7 +12,7 @@ class EncriptionWithMatrices extends EncriptionWithKey implements Encription
         $len2 = count($A2);
 
         $maxLen = max($len1, $len2);
-        $n = (int)ceil(sqrt($maxLen)); 
+        $n = (int) ceil(sqrt($maxLen));
         if ($n < 2) {
             $n = 2;
         }
@@ -26,18 +26,24 @@ class EncriptionWithMatrices extends EncriptionWithKey implements Encription
     private function transformToArray(string|int $message): array
     {
         $lettersByNumbers = [];
-        $message = strtolower((string)$message);
-        foreach (str_split($message) as $char) {
-        if ($char >= 'a' && $char <= 'z') {
-            $num = ord($char) - ord('a') + 1;
-        } elseif (ctype_digit($char)) {
-            $num = (int)$char;
-        } else {
-            continue;
-        }
 
-        $lettersByNumbers[] = $num;
-    }
+        $message = iconv('UTF-8', 'ASCII//TRANSLIT', (string) $message);
+        $message = strtolower($message);
+
+        $message = strtolower((string) $message);
+        foreach (str_split($message) as $char) {
+            if ($char >= 'a' && $char <= 'z') {
+                $num = ord($char) - ord('a') + 1;
+            } elseif (ctype_digit($char)) {
+                $num = (int) $char;
+            } elseif ($char === "□") {
+                $num = 0;
+            } else {
+                continue;
+            }
+
+            $lettersByNumbers[] = $num;
+        }
         return $lettersByNumbers;
     }
 
@@ -79,9 +85,9 @@ class EncriptionWithMatrices extends EncriptionWithKey implements Encription
         foreach ($result as $row) {
             foreach ($row as $num) {
                 $letterIndex = (($num - 1) % 26) + 1;
-                $char = chr($letterIndex + ord('a') - 1) == '`' ? " " : chr($letterIndex + ord('a') - 1);
+                $char = chr($letterIndex + ord('a') - 1) == '`' ? "□" : chr($letterIndex + ord('a') - 1);
                 $message .= $char;
-                
+
             }
         }
 

@@ -109,11 +109,11 @@
             </p>
 
             <p><strong>Multiplicando:</strong>
-                <span class="matrix-inline">[2 1] × [15] = [39]<br>[1 1] × [9] = [24]</span>
+                <span class="matrix-inline">[2 x 15 + 1 * 9] = [39]<br>[1 x 15 + 1 * 9] = [24]</span>
             </p>
 
-            <p><strong>Matriz resultante:</strong> [39, 24].</p>
-            <p><strong>Mensagem criptografada:</strong> MX</p>
+            <p><strong>Matriz resultante:</strong><span class="matrix-inline">[39]<br>[24]</span><p>
+            <p><strong>Matrix convertida em texto: </strong> MX</p>
             <p>Para descobrir “OI” novamente, é preciso usar a matriz inversa da chave.</p>
         </div>
 
