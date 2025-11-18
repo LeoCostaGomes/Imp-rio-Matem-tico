@@ -18,10 +18,12 @@ jobs:
         with:
           username: ${{ secrets.DOCKERHUB_USERNAME }}
           password: ${{ secrets.DOCKERHUB_TOKEN }}
+          registry: docker.io   # 👈 OBRIGATÓRIO
 
       - name: Build and push
         uses: docker/build-push-action@v4
         with:
           context: .
+          file: ./Dockerfile     # 👈 coloque se der erro de Dockerfile
           push: true
           tags: LeoCostaGomes/feira_matematica:latest
