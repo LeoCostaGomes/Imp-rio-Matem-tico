@@ -26,4 +26,4 @@ jobs:
           context: .
           file: ./Dockerfile
           push: true
-          tags: LeoCostaGomes/feira_matematica
+          tags: LeoCostaGomes/feira_matematica:latest
