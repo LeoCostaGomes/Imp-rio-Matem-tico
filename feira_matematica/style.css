@@ -1,103 +1,106 @@
-:root { 
-    --piscano: flicker 3s infinite alternate;
+:root {
+    --neon-blue: #00c8ff;
+    --neon-blue-light: #7eeaff;
+    --neon-dark: #001522;
+    --neon-glow: 0 0 20px #00c8ff, 0 0 40px #0094cc, 0 0 80px #00c8ff;
 }
 
-@keyframes flicker {
-    0%, 18%, 22%, 25%, 53%, 57%, 100% { opacity: 1; }
-    20%, 24%, 55% { opacity: 0.6; }
+/* ---------- GERAL ---------- */
+
+body {
+    background: #000510; /* Preto com leve azul */
+    color: var(--neon-blue-light);
+    font-family: 'Courier New', monospace;
+    margin: 0;
+    padding: 0;
 }
+
+/* ---------- CABEÇALHO ---------- */
+
+header {
+    text-align: center;
+    padding: 60px 20px 30px;
+    background: linear-gradient(180deg, #001e33, #000510);
+    box-shadow: 0 0 40px #00c8ff inset;
+}
+
+h1 {
+    font-size: 3em;
+    color: var(--neon-blue);
+    text-shadow: var(--neon-glow);
+    letter-spacing: 2px;
+}
+
+h2, h3 {
+    color: var(--neon-blue-light);
+    text-shadow: 0 0 15px #00c8ff;
+}
+
+/* ---------- SEÇÕES ---------- */
 
 section {
     max-width: 900px;
     margin: 40px auto;
     padding: 25px;
-    background: rgba(0, 30, 0, 0.8);
-    border: 1px solid #00ff66;
-    border-radius: 10px;
-    box-shadow: 0 0 25px #00ff33;
-    position: relative;
-    z-index: 1;
-    backdrop-filter: blur(2px);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    background: rgba(0, 40, 70, 0.35); /* vidro escuro futurista */
+    border: 1px solid var(--neon-blue);
+    border-radius: 12px;
+    box-shadow: 0 0 25px #0099dd inset, 0 0 25px #00c8ff;
+    backdrop-filter: blur(4px);
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
 }
 
 section:hover {
     transform: scale(1.02);
-    box-shadow: 0 0 40px #00ff99;
+    box-shadow: 0 0 40px #00dbff, 0 0 80px #0088cc inset;
 }
 
-
-body {
-    background-color: #000;
-    color: #00ff66;
-    font-family: 'Courier New', monospace;
-    margin: 0;
-    padding: 0;
-    overflow-x: hidden;
-}
-
-header {
-    text-align: center;
-    padding: 60px 20px 30px;
-    background: linear-gradient(180deg, #002200, #000);
-    box-shadow: 0 0 25px #00ff66;
-    position: relative;
-    z-index: 1;
-}
+/* ---------- FOOTER ---------- */
 
 footer {
     text-align: center;
     padding: 30px;
-    color: #00ff66;
-    border-top: 1px solid #00ff66;
-    margin-top: 60px;
-    background: #001900;
-    box-shadow: 0 -5px 20px #00ff33;
+    color: var(--neon-blue-light);
+    border-top: 1px solid var(--neon-blue);
+    background: #000814;
+    box-shadow: 0 -5px 25px #00c8ff inset;
 }
 
-.card{
-    background-color: #08381b;
-    padding: 5px;
-    padding-left: 10px;
-    border-radius: 6px;
+/* ---------- CARDS ---------- */
+
+.card {
+    background: rgba(0, 25, 45, 0.7);
+    padding: 10px 15px;
+    border-radius: 8px;
+    border: 1px solid var(--neon-blue);
+    box-shadow: 0 0 20px #00c8ff80;
 }
+
+/* ---------- MATRIZ INLINE ---------- */
 
 .matrix-inline {
     display: inline-table;
-    font-family: 'Courier New', monospace;
     white-space: pre;
-    color: #00ff66;
-    text-shadow: 0 0 12px #00ff66;
+    color: var(--neon-blue-light);
     margin-left: 10px;
-    
+    text-shadow: var(--neon-glow);
 }
 
-h1 {
-    font-size: 3em;
-    color: #00ff66;
-    text-shadow: 0 0 20px #00ff66, 0 0 40px #00ff33;
-    letter-spacing: 2px;
-    animation: var(--piscano);
-}
-
-h2, h3 {
-    color: #00ff99;
-    text-shadow: 0 0 12px #00ff66;  
-    animation: var(--piscano);  
-}
+/* ---------- TEXTOS ---------- */
 
 p {
     line-height: 1.6em;
     font-size: 1.1em;
-    animation: var(--piscano); 
 }
 
+/* ---------- TÍTULOS DE SEÇÃO ---------- */
 
 .titulo {
-    border-bottom: 1px solid #00ff66;
+    border-bottom: 1px solid var(--neon-blue);
     padding-bottom: 8px;
 }
 
+/* ---------- FORMULÁRIO ---------- */
 
 #form-encrypt {
     display: flex;
@@ -107,74 +110,64 @@ p {
 
 #form-encrypt label {
     font-size: 1.1em;
-    color: #00ff99;
-    text-shadow: 0 0 5px #00ff66;
-    margin-bottom: 5px;
-    display: block;
+    color: var(--neon-blue-light);
+    text-shadow: 0 0 8px #00c8ff;
 }
 
 #form-encrypt input[type="text"],
 #form-encrypt select {
     width: 100%;
     padding: 10px;
-    margin-top: 5px;
-    background-color: rgba(0, 50, 0, 0.9);
-    border: 1px solid #00ff66;
-    color: #00ff66;
-    font-family: 'Courier New', monospace;
-    font-size: 1em;
+    background: #000c19;
+    border: 1px solid var(--neon-blue);
+    color: #b4f2ff;
     border-radius: 5px;
-    box-shadow: 0 0 10px #00ff33;
-    transition: all 0.3s ease;
-    -webkit-appearance: none;
-    -moz-appearance: none;
-    appearance: none;
+    box-shadow: 0 0 12px #00c8ff40;
+    transition: box-shadow 0.2s, border-color 0.2s;
 }
 
 #form-encrypt input[type="text"]:focus,
 #form-encrypt select:focus {
     outline: none;
-    border-color: #00ffff;
-    box-shadow: 0 0 15px #00ffff, 0 0 20px #00ff66;
-    background-color: rgba(0, 60, 0, 0.95);
+    border-color: var(--neon-blue-light);
+    box-shadow: 0 0 20px #00c8ff;
 }
+
+/* ---------- BOTÃO SUBMIT ---------- */
 
 #form-encrypt button[type="submit"] {
     padding: 12px 25px;
     margin-top: 20px;
-    background-color: #00ff66;
+    background: var(--neon-blue);
     color: #000;
-    border: 2px solid #00ff66;
+    border: 2px solid var(--neon-blue-light);
     border-radius: 5px;
-    font-family: 'Courier New', monospace;
     font-size: 1.2em;
     font-weight: bold;
     cursor: pointer;
-    box-shadow: 0 0 15px #00ff66;
-    transition: background-color 0.3s ease, color 0.3s ease, box-shadow 0.3s ease;
+    transition: 0.25s ease;
     text-transform: uppercase;
+    box-shadow: 0 0 20px #00c8ff;
 }
 
 #form-encrypt button[type="submit"]:hover {
-    background-color: #000;
-    color: #00ff66;
-    border-color: #00ff99;
-    box-shadow: 0 0 25px #00ff99, 0 0 40px #00ff66;
+    background: #000;
+    color: var(--neon-blue-light);
+    box-shadow: var(--neon-glow);
 }
 
-#keyInput {
-    display: flex;
-    flex-direction: column;
-}
+/* ---------- SELECT OPTIONS ---------- */
 
 #encriptType option {
-    background-color: #001900;
-    color: #00ff66;
+    background: #000c19;
+    color: var(--neon-blue-light);
 }
 
-.resultado-criptografia {
-    word-break: break-all; 
+/* ---------- RESULTADO ---------- */
 
-    overflow-wrap: break-word; 
-    white-space: pre-wrap; 
+.resultado-criptografia {
+    word-break: break-all;
+    white-space: pre-wrap;
+    color: var(--neon-blue-light);
+    text-shadow: 0 0 10px #00c8ff;
 }
